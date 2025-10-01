@@ -56,89 +56,118 @@
 <body class="antialiased">
     <header class="bg-white shadow-sm sticky top-0 z-10">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-bold text-gray-800">Rádio Fórum <span class="font-normal text-gray-500">| Análise de Agosto 2025</span></h1>
+            <h1 class="text-xl md:text-2xl font-bold text-gray-800">Rádio Fórum <span class="font-normal text-gray-500">| Análise Mensal</span></h1>
             <div class="hidden md:flex space-x-8">
                 <a href="#overview" class="nav-link text-gray-600 font-medium">Visão Geral</a>
-                <a href="#top-pages" class="nav-link text-gray-600 font-medium">Top Páginas</a>
-                <a href="#comparison" class="nav-link text-gray-600 font-medium">Comparação</a>
-                <a href="#audience" class="nav-link text-gray-600 font-medium">Audiência</a>
+                <a href="historical_data_database.html" class="nav-link text-gray-600 font-medium">Histórico de Meses</a>
+                <a href="#comparison" class="nav-link text-gray-600 font-medium">Comparação Web</a>
+                <a href="#audience" class="nav-link text-gray-600 font-medium">Audiência Web</a>
+                <a href="#streaming" class="nav-link text-gray-600 font-medium">Streaming</a>
                 <a href="#conclusions" class="nav-link text-gray-600 font-medium">Conclusões</a>
             </div>
         </nav>
     </header>
 
-    <main class="container mx-auto p-4 md:p-6 lg:p-8">
+     <main class="container mx-auto p-4 md:p-6 lg:p-8">
         <section id="overview" class="mb-12 scroll-mt-20">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Visão Geral do Desempenho</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Resumo de Performance (Setembro)</h2>
             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
-                Um resumo dos principais indicadores de performance da Rádio Fórum durante o mês de agosto. Estes números destacam o crescimento significativo e o forte engajamento da audiência.
+                Análise dos principais indicadores de Setembro, comparando com o desempenho de Agosto. Embora a retenção se mantenha estável, observa-se uma ligeira contração no volume de utilizadores.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 1. Utilizadores Ativos -->
                 <div class="kpi-card text-center">
-                    <h3 class="text-lg font-semibold text-gray-500 mb-2">Utilizadores Ativos</h3>
-                    <p class="text-4xl font-bold text-blue-600">9,7 mil</p>
+                    <h3 class="text-lg font-semibold text-gray-500 mb-2">Utilizadores Ativos (Web)</h3>
+                    <p class="text-4xl font-bold text-blue-600">8,6 mil</p>
+                    <div class="flex items-center justify-center mt-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-down" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-sm font-semibold text-down">-11,3%</span>
+                    </div>
                 </div>
+                
+                <!-- 2. Novos Utilizadores -->
                 <div class="kpi-card text-center">
-                    <h3 class="text-lg font-semibold text-gray-500 mb-2">Novos Utilizadores</h3>
-                    <p class="text-4xl font-bold text-green-600">9 mil</p>
+                    <h3 class="text-lg font-semibold text-gray-500 mb-2">Novos Utilizadores (Web)</h3>
+                    <p class="text-4xl font-bold text-gray-800">7,7 mil</p>
+                    <div class="flex items-center justify-center mt-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-down" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-sm font-semibold text-down">-14,4%</span>
+                    </div>
                 </div>
+                
+                <!-- 3. Tempo de Engajamento -->
                 <div class="kpi-card text-center">
                     <h3 class="text-lg font-semibold text-gray-500 mb-2">Tempo de Engajamento</h3>
                     <p class="text-4xl font-bold text-purple-600">39s</p>
-                    <p class="text-sm text-gray-500">em média</p>
+                    <div class="flex items-center justify-center mt-2">
+                        <span class="text-sm font-semibold text-gray-500">Estável</span>
+                    </div>
                 </div>
+                
+                <!-- 4. Visualizações Totais -->
                 <div class="kpi-card text-center">
                     <h3 class="text-lg font-semibold text-gray-500 mb-2">Visualizações Totais</h3>
-                    <p class="text-4xl font-bold text-yellow-600">21,5 mil</p>
+                    <p class="text-4xl font-bold text-gray-800">18,0 mil</p>
+                    <div class="flex items-center justify-center mt-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-down" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-sm font-semibold text-down">-16,3%</span>
+                    </div>
                 </div>
             </div>
         </section>
         
         <section id="top-pages" class="mb-12 scroll-mt-20">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Páginas Mais Acedidas</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Páginas Mais Acedidas (Setembro)</h2>
             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
-                Esta lista classifica as páginas com maior número de visualizações em agosto, revelando os conteúdos que mais captaram o interesse do público.
+                As páginas mais acedidas em Setembro, mostrando que conteúdos sobre o **Movimento Independente** e a **Rádio Fórum** tiveram forte desempenho.
             </p>
             <div class="content-card max-w-4xl mx-auto">
                 <ul class="space-y-4">
                     <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-3 bg-gray-50 rounded-md">
-                        <span class="font-medium text-gray-700 truncate pr-4">1. Página Inicial</span>
-                        <span class="font-bold text-blue-600 whitespace-nowrap">3.607 visualizações</span>
+                        <span class="font-medium text-gray-700 truncate pr-4">1. Rádio Fórum (Home)</span>
+                        <span class="font-bold text-blue-600 whitespace-nowrap">1.500 visualizações</span>
                     </li>
                     <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-3 bg-gray-50 rounded-md">
-                        <span class="font-medium text-gray-700 truncate pr-4">2. Notícia: Regina Gouveia, Luis Marques...</span>
-                        <span class="font-bold text-blue-600 whitespace-nowrap">1.102 visualizações</span>
+                        <span class="font-medium text-gray-700 truncate pr-4">2. Página Inicial ("Fórum Covilhã")</span>
+                        <span class="font-bold text-blue-600 whitespace-nowrap">1.300 visualizações</span>
                     </li>
                     <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-3 bg-gray-50 rounded-md">
-                        <span class="font-medium text-gray-700 truncate pr-4">3. Notícia: Luciana Leitão é a nova candidata...</span>
-                        <span class="font-bold text-blue-600 whitespace-nowrap">956 visualizações</span>
+                        <span class="font-medium text-gray-700 truncate pr-4">3. Notícia: Movimento Independente</span>
+                        <span class="font-bold text-blue-600 whitespace-nowrap">1.200 visualizações</span>
                     </li>
                     <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-3 bg-gray-50 rounded-md">
-                        <span class="font-medium text-gray-700 truncate pr-4">4. Notícia: João Almeida, se o incêndio...</span>
-                        <span class="font-bold text-blue-600 whitespace-nowrap">891 visualizações</span>
+                        <span class="font-medium text-gray-700 truncate pr-4">4. Notícia: Candidatos conhecidos...</span>
+                        <span class="font-bold text-blue-600 whitespace-nowrap">952 visualizações</span>
                     </li>
                     <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-3 bg-gray-50 rounded-md">
-                        <span class="font-medium text-gray-700 truncate pr-4">5. Notícia: PSD do Fundão repudia ações...</span>
-                        <span class="font-bold text-blue-600 whitespace-nowrap">532 visualizações</span>
+                        <span class="font-medium text-gray-700 truncate pr-4">5. Notícia: Regina Gouveia, Luis M</span>
+                        <span class="font-bold text-blue-600 whitespace-nowrap">577 visualizações</span>
                     </li>
                 </ul>
             </div>
         </section>
 
         <section id="comparison" class="mb-12 scroll-mt-20">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Comparação Mensal (Julho vs. Agosto)</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Comparação Mensal (Agosto vs. Setembro)</h2>
             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
-                Compare as principais métricas de desempenho de agosto com as de julho para visualizar o crescimento da Rádio Fórum.
+                Comparação do volume de utilizadores e novos utilizadores entre Setembro (Atual) e Agosto (Anterior).
             </p>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                  <div class="content-card">
-                    <h3 class="text-xl font-semibold mb-4 text-center">Utilizadores Ativos</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Utilizadores Ativos (Web)</h3>
                     <div class="chart-container mx-auto">
                         <canvas id="userComparisonChart"></canvas>
                     </div>
                 </div>
                 <div class="content-card">
-                    <h3 class="text-xl font-semibold mb-4 text-center">Novos Utilizadores</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Novos Utilizadores (Web)</h3>
                     <div class="chart-container mx-auto">
                         <canvas id="newUsersComparisonChart"></canvas>
                     </div>
@@ -147,9 +176,9 @@
         </section>
 
         <section id="audience" class="mb-12 scroll-mt-20">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Análise da Audiência</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Análise da Audiência (Setembro)</h2>
              <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
-                De onde vêm os nossos utilizadores e que tecnologia utilizam? Explore as origens de tráfego, a distribuição geográfica e os dispositivos mais comuns.
+                Fontes de tráfego, distribuição geográfica e sistemas operacionais mais utilizados em Setembro.
             </p>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 <div class="content-card">
@@ -172,33 +201,60 @@
                 </div>
             </div>
         </section>
+
+        <!-- NOVA SECÇÃO: ANÁLISE DE DADOS DE STREAMING/ÁUDIO -->
+        <section id="streaming" class="mb-12 scroll-mt-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Histórico de Audiência em Horas (Streaming)</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
+                Análise do desempenho central do produto da rádio: o streaming de áudio. Os dados demonstram um <b>crescimento massivo</b> nas sessões de áudio e horas consumidas.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                 <div class="kpi-card text-center lg:col-span-1">
+                    <h3 class="text-lg font-semibold text-gray-500 mb-2">Máximo Simultâneo</h3>
+                    <p class="text-4xl font-bold text-green-600">41</p>
+                    <p class="text-sm text-gray-500">Sessões simultâneas (Setembro)</p>
+                </div>
+                 <div class="content-card lg:col-span-2">
+                    <h3 class="text-xl font-semibold mb-4 text-center">Sessões de Áudio Mês a Mês</h3>
+                    <div class="chart-container mx-auto">
+                        <canvas id="streamingSessionsChart"></canvas>
+                    </div>
+                </div>
+                <div class="content-card lg:col-span-3">
+                    <h3 class="text-xl font-semibold mb-4 text-center">Horas de Áudio Ouvidas Mês a Mês</h3>
+                    <div class="chart-container mx-auto" style="max-width: 800px;">
+                        <canvas id="streamingHoursChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <section id="conclusions" class="mb-12 scroll-mt-20">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Principais Conclusões</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Principais Conclusões de Setembro</h2>
             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
-                As principais observações estratégicas retiradas da análise de dados de agosto, fornecendo insights valiosos sobre o comportamento do utilizador.
+                Observações estratégicas com base na análise de desempenho de Setembro.
             </p>
             <div class="content-card max-w-4xl mx-auto">
                 <div class="space-y-6">
                     <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold">👍</div>
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl font-bold">⭐</div>
                         <div>
-                            <h4 class="font-semibold text-lg">Domínio Social</h4>
-                            <p class="text-gray-700">O tráfego social, especialmente do Facebook (agregando ~6,8 mil utilizadores), continua a ser a principal força motriz do site, validando a estratégia de divulgação na plataforma.</p>
+                            <h4 class="font-semibold text-lg">Sucesso no Streaming de Áudio</h4>
+                            <p class="text-gray-700">Apesar da contração no tráfego web, o desempenho central da rádio é <b>extremamente positivo</b>. As sessões de áudio cresceram +305% e as horas ouvidas aumentaram +141%, indicando que o consumo de áudio está a consolidar-se.</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl font-bold">📱</div>
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold">⚠️</div>
                         <div>
-                            <h4 class="font-semibold text-lg">Foco no Mobile</h4>
-                            <p class="text-gray-700">A predominância de acessos via telemóvel (Android e iOS somam ~8,1 mil utilizadores) reforça a necessidade contínua de otimizar a experiência do utilizador para estes dispositivos.</p>
+                            <h4 class="font-semibold text-lg">Contração de Audiência Web</h4>
+                            <p class="text-gray-700">Setembro registou uma redução no volume geral de utilizadores e novos utilizadores (aprox. -11%), indicando um regresso a níveis mais próximos da base, após o pico de Agosto. É crucial analisar se o calendário noticioso de Setembro foi menos intenso.</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold">🚀</div>
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl font-bold">✅</div>
                         <div>
-                            <h4 class="font-semibold text-lg">Crescimento Acelerado</h4>
-                            <p class="text-gray-700">O crescimento de 49% em utilizadores ativos e a aquisição de 9 mil novos utilizadores num único mês são indicadores claros do sucesso e do aumento do alcance da rádio.</p>
+                            <h4 class="font-semibold text-lg">Ascensão do Tráfego Orgânico</h4>
+                            <p class="text-gray-700">O <b>Google (Orgânico)</b> foi a única fonte a crescer em Setembro, registando <b>2,4 mil</b> utilizadores ativos (+33% M/M). O aumento da relevância nas pesquisas é um forte indicador de sucesso a longo prazo.</p>
                         </div>
                     </div>
                 </div>
@@ -216,36 +272,47 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
+            // Dados ATUALIZADOS para Setembro de 2025 (Dados de Web)
             const reportData = {
+                // Fonte: Resumo dos relatórios setembro.pdf
                 trafficSources: {
-                    labels: ['Facebook', 'Google (Orgânico)', 'Direto', 'Instagram'],
-                    data: [6796, 1800, 775, 145]
+                    labels: ['Google (Orgânico)', 'Facebook', 'Direto', 'Instagram'],
+                    data: [2400, 4500, 1400, 400] 
                 },
                 locations: {
-                    labels: ['Covilhã', 'Lisboa', 'Dublin', 'Porto', 'Luleå', 'Forest City'],
-                    data: [2400, 1500, 226, 209, 220, 220]
+                    labels: ['Covilhã', 'Lisboa', 'Porto', 'Dublin', 'Luleå', 'Forest City'],
+                    data: [2700, 1800, 201, 224, 196, 156]
                 },
                 os: {
                     labels: ['Android', 'iOS', 'Windows', 'Linux', 'Macintosh'],
-                    data: [5000, 3100, 981, 510, 175]
+                    data: [4500, 2500, 1100, 377, 134] 
                 },
+                // Comparação Web: Agosto (Anterior) vs Setembro (Atual)
                 comparison: {
-                    labels: ['Julho', 'Agosto'],
-                    users: [6500, 9700],
-                    newUsers: [6500, 9000]
+                    labels: ['Agosto', 'Setembro'],
+                    users: [9700, 8600],
+                    newUsers: [9000, 7700]
+                },
+                 // Dados de Streaming (Áudio) - NOVOS DADOS
+                streaming: {
+                    labels: ['Agosto', 'Setembro'],
+                    sessions: [950, 3851], // Sessões Totais
+                    hours: [108, 260] // Horas Ouvidas
                 }
             };
             
             const chartColors = {
-                primary: ['#3B82F6', '#10B981', '#8B5CF6', '#F59E0B', '#EF4444', '#64748B'],
-                secondary: '#9CA3AF',
-                accent: '#3B82F6',
+                primary: ['#10B981', '#3B82F6', '#8B5CF6', '#F59E0B', '#EF4444', '#64748B'],
+                secondary: '#9CA3AF', // Cor base para o mês anterior (Agosto)
+                accent: '#3B82F6', // Cor base para o mês atual (Setembro)
+                streaming: '#10B981' // Verde para destacar o sucesso do streaming
             };
             
             Chart.defaults.font.family = "'Inter', sans-serif";
             Chart.defaults.font.size = 14;
             Chart.defaults.color = '#374151';
 
+            // Gráfico de Pizza/Doughnut - Origem do Tráfego (Web)
             new Chart(document.getElementById('trafficSourceChart').getContext('2d'), {
                 type: 'doughnut',
                 data: {
@@ -275,6 +342,7 @@
                 }
             });
 
+            // Gráfico de Barras Horizontais - Localização (Web)
             new Chart(document.getElementById('locationChart').getContext('2d'), {
                 type: 'bar',
                 data: {
@@ -282,7 +350,7 @@
                     datasets: [{
                         label: 'Utilizadores Ativos',
                         data: reportData.locations.data,
-                        backgroundColor: chartColors.primary[1],
+                        backgroundColor: chartColors.accent,
                         borderRadius: 4
                     }]
                 },
@@ -293,6 +361,7 @@
                 }
             });
             
+            // Gráfico de Barras Verticais - Sistema Operacional (Web)
             new Chart(document.getElementById('osChart').getContext('2d'), {
                 type: 'bar',
                 data: {
@@ -300,7 +369,7 @@
                     datasets: [{
                         label: 'Utilizadores Ativos',
                         data: reportData.os.data,
-                        backgroundColor: chartColors.primary,
+                        backgroundColor: chartColors.primary.slice(0, 5),
                         borderRadius: 4
                     }]
                 },
@@ -311,6 +380,7 @@
                 }
             });
 
+            // Gráfico de Comparação - Utilizadores Ativos (Web)
             new Chart(document.getElementById('userComparisonChart').getContext('2d'), {
                 type: 'bar',
                 data: {
@@ -329,6 +399,7 @@
                 }
             });
 
+            // Gráfico de Comparação - Novos Utilizadores (Web)
             new Chart(document.getElementById('newUsersComparisonChart').getContext('2d'), {
                 type: 'bar',
                 data: {
@@ -346,8 +417,51 @@
                     scales: { y: { beginAtZero: true, grace: '5%' } }
                 }
             });
+
+            // NOVO GRÁFICO - Sessões de Áudio (Streaming)
+            new Chart(document.getElementById('streamingSessionsChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: reportData.streaming.labels,
+                    datasets: [{
+                        label: 'Sessões Totais de Streaming',
+                        data: reportData.streaming.sessions,
+                        backgroundColor: [chartColors.secondary, chartColors.streaming], // Cinza vs Verde
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: (context) => `${context.raw.toLocaleString('pt-PT')} Sessões` } }
+                    },
+                    scales: { y: { beginAtZero: true, grace: '5%' } }
+                }
+            });
+            
+            // NOVO GRÁFICO - Horas de Áudio (Streaming)
+            new Chart(document.getElementById('streamingHoursChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: reportData.streaming.labels,
+                    datasets: [{
+                        label: 'Horas Totais Ouvidas',
+                        data: reportData.streaming.hours,
+                        backgroundColor: [chartColors.secondary, chartColors.streaming], // Cinza vs Verde
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: (context) => `${context.raw.toLocaleString('pt-PT')} Horas` } }
+                    },
+                    scales: { y: { beginAtZero: true, grace: '5%' } }
+                }
+            });
         });
     </script>
 </body>
 </html>
-
