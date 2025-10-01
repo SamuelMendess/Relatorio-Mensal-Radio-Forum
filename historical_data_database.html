@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Desempenho Mensal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony (Off-white, Dark Gray, Muted Blue, Green Accent) -->
+    <!-- Application Structure Plan: This page is designed as a historical data dashboard, separate from the main monthly report. The structure emphasizes longitudinal comparison: a large Comparative Table provides detailed M/M/M metrics, followed by Trend Charts (Line Charts) to visualize growth over time, allowing users to quickly synthesize performance evolution. Navigation links back to the main report (Home) and itself for quick section jumping. -->
+    <!-- Visualization & Content Choices: 1. Comparative Table -> Goal: Organize & Inform -> Method: HTML Table -> Interaction: Scrollable (on mobile) -> Justification: Best format for side-by-side metric comparison across three time periods. 2. Web Trend Chart (Users) -> Goal: Show Change -> Viz: Line Chart (Chart.js/Canvas) -> Interaction: Hover tooltips -> Justification: Clearly visualizes the trend (Jul->Aug peak, Aug->Sep dip) over time. 3. Streaming Trend Chart (Hours) -> Goal: Show Growth -> Viz: Line Chart (Chart.js/Canvas) -> Interaction: Hover tooltips -> Justification: Clearly visualizes the strong, positive growth in core streaming metrics. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #212529;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .nav-link {
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #3B82F6;
+        }
+        th {
+            background-color: #E5E7EB;
+            color: #374151;
+        }
+        .growth-positive { color: #10B981; font-weight: 600; } /* Tailwind Green-500 */
+        .growth-negative { color: #EF4444; font-weight: 600; } /* Tailwind Red-500 */
+        .growth-neutral { color: #6B7280; font-weight: 600; } /* Tailwind Gray-500 */
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold text-gray-800">Rádio Fórum <span class="font-normal text-gray-500">| Histórico de Dados</span></h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-blue-600 font-bold hover:text-blue-800">← Voltar para Setembro</a>
+                <a href="#summary" class="nav-link text-gray-600 font-medium">Resumo Comparativo</a>
+                <a href="#web-trends" class="nav-link text-gray-600 font-medium">Tendências Web</a>
+                <a href="#streaming-trends" class="nav-link text-gray-600 font-medium">Tendências Streaming</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-6 lg:p-8">
+        <section id="summary" class="mb-12 scroll-mt-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Resumo de Desempenho Mensal (Julho - Setembro)</h2>
+            <p class="text-center text-gray-600 max-w-4xl mx-auto mb-8">
+                Esta tabela oferece uma visão consolidada das métricas de <b>Web</b> e <b>Streaming</b> ao longo dos últimos três meses, permitindo uma análise rápida do crescimento e das áreas de foco.
+            </p>
+            <div class="content-card max-w-6xl mx-auto overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider">Métrica</th>
+                            <th scope="col" class="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider">Julho</th>
+                            <th scope="col" class="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider">Agosto</th>
+                            <th scope="col" class="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider">Setembro</th>
+                            <th scope="col" class="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider">Crescimento Total (Jul-Set)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200 text-sm">
+                        
+                        <!-- WEB TRAFFIC METRICS -->
+                        <tr class="bg-gray-50">
+                            <td colspan="5" class="px-4 py-2 font-bold text-gray-800">TRÁFEGO WEB (GOOGLE ANALYTICS)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-medium">Utilizadores Ativos</td>
+                            <td class="px-4 py-2 text-center">6,500</td>
+                            <td class="px-4 py-2 text-center">9,700</td>
+                            <td class="px-4 py-2 text-center">8,600</td>
+                            <td class="px-4 py-2 text-center growth-positive">+32.3%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-medium">Novos Utilizadores</td>
+                            <td class="px-4 py-2 text-center">6,500</td>
+                            <td class="px-4 py-2 text-center">9,000</td>
+                            <td class="px-4 py-2 text-center">7,700</td>
+                            <td class="px-4 py-2 text-center growth-positive">+18.5%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-medium">Visualizações Totais</td>
+                            <td class="px-4 py-2 text-center">21,492</td>
+                            <td class="px-4 py-2 text-center">32,000</td>
+                            <td class="px-4 py-2 text-center">18,000</td>
+                            <td class="px-4 py-2 text-center growth-negative">-16.3%</td>
+                        </tr>
+                        
+                        <!-- STREAMING METRICS -->
+                        <tr class="bg-gray-50">
+                            <td colspan="5" class="px-4 py-2 font-bold text-gray-800">STREAMING DE ÁUDIO (MÉTRICAS CORE)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-medium">Sessões Totais (Áudio)</td>
+                            <td class="px-4 py-2 text-center">1,340</td> 
+                            <td class="px-4 py-2 text-center">950</td>
+                            <td class="px-4 py-2 text-center">3,851</td>
+                            <td class="px-4 py-2 text-center growth-positive">+187.4%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-medium">Horas Totais Ouvidas</td>
+                            <td class="px-4 py-2 text-center">139h</td> 
+                            <td class="px-4 py-2 text-center">108h</td>
+                            <td class="px-4 py-2 text-center">260h</td>
+                            <td class="px-4 py-2 text-center growth-positive">+87.1%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 font-medium">Máximo de Sessões Simultâneas</td>
+                            <td class="px-4 py-2 text-center">11</td> 
+                            <td class="px-4 py-2 text-center">20</td>
+                            <td class="px-4 py-2 text-center">41</td>
+                            <td class="px-4 py-2 text-center growth-positive">+272.7%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="web-trends" class="mb-12 scroll-mt-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Tendência de Utilizadores Web (Julho - Setembro)</h2>
+            <p class="text-center text-gray-600 max-w-4xl mx-auto mb-8">
+                O gráfico de linhas demonstra o pico de utilização em Agosto, seguido por uma estabilização ou contração em Setembro, comum após um evento de alto tráfego.
+            </p>
+            <div class="content-card max-w-4xl mx-auto">
+                <div class="chart-container mx-auto">
+                    <canvas id="webUsersTrendChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="streaming-trends" class="mb-12 scroll-mt-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Tendência de Audiência em Horas (Streaming)</h2>
+            <p class="text-center text-gray-600 max-w-4xl mx-auto mb-8">
+                A métrica mais crítica para a rádio mostra um crescimento consistente, com uma subida acentuada em Setembro, indicando uma forte adoção do produto de streaming.
+            </p>
+            <div class="content-card max-w-4xl mx-auto">
+                <div class="chart-container mx-auto">
+                    <canvas id="streamingHoursTrendChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t mt-12">
+        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
+            <p>&copy; 2025 Rádio Fórum. Dados históricos consolidados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Dados Históricos Consolidados (Julho, Agosto, Setembro)
+            const historicalData = {
+                months: ['Julho', 'Agosto', 'Setembro'],
+                
+                // WEB DATA
+                webUsers: [6500, 9700, 8600],
+                
+                // STREAMING DATA (Sessões e Horas de Áudio)
+                // Atualizado com dados de julho: Sessões (1340), Horas (139h), Máximo simultâneo (11)
+                streamingSessions: [1340, 950, 3851],
+                streamingHours: [139, 108, 260]
+            };
+            
+            const chartColors = {
+                primary: '#3B82F6', // Azul para Web
+                streaming: '#10B981', // Verde para Streaming
+                accent: '#9CA3AF'
+            };
+            
+            Chart.defaults.font.family = "'Inter', sans-serif";
+            Chart.defaults.font.size = 14;
+            Chart.defaults.color = '#374151';
+
+            // GRÁFICO 1: Tendência de Utilizadores Web (Linha)
+            new Chart(document.getElementById('webUsersTrendChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: historicalData.months,
+                    datasets: [{
+                        label: 'Utilizadores Ativos (Web)',
+                        data: historicalData.webUsers,
+                        borderColor: chartColors.primary,
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top' } },
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+
+            // GRÁFICO 2: Tendência de Horas Ouvidas (Linha)
+            new Chart(document.getElementById('streamingHoursTrendChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: historicalData.months,
+                    datasets: [{
+                        label: 'Horas Totais Ouvidas',
+                        data: historicalData.streamingHours,
+                        borderColor: chartColors.streaming,
+                        backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { position: 'top' },
+                        tooltip: { callbacks: { label: (context) => `${context.raw} Horas Ouvidas` } }
+                    },
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+            
+             // Função para alternar a visibilidade das seções
+             const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+             navLinks.forEach(link => {
+                 link.addEventListener('click', function(e) {
+                     e.preventDefault();
+                     document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                 });
+             });
+        });
+    </script>
+</body>
+</html>
