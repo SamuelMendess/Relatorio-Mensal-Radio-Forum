@@ -59,6 +59,13 @@
     <header class="bg-white shadow-sm sticky top-0 z-10">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl md:text-2xl font-bold text-gray-800">Rádio Fórum <span class="font-normal text-gray-500">| Histórico de Dados</span></h1>
+            <!-- Botão hambúrguer para mobile -->
+            <button id="menu-toggle" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-600 border-gray-400 focus:outline-none" aria-label="Abrir menu">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <!-- Menu desktop -->
             <div class="hidden md:flex space-x-8">
                 <a href="index.html" class="nav-link text-blue-600 font-bold hover:text-blue-800">← Voltar para Setembro</a>
                 <a href="#summary" class="nav-link text-gray-600 font-medium">Resumo Comparativo</a>
@@ -66,6 +73,13 @@
                 <a href="#streaming-trends" class="nav-link text-gray-600 font-medium">Tendências Streaming</a>
             </div>
         </nav>
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 px-6 py-4">
+            <a href="index.html" class="block nav-link text-blue-600 font-bold hover:text-blue-800 mb-2">← Voltar para Setembro</a>
+            <a href="#summary" class="block nav-link text-gray-600 font-medium mb-2">Resumo Comparativo</a>
+            <a href="#web-trends" class="block nav-link text-gray-600 font-medium mb-2">Tendências Web</a>
+            <a href="#streaming-trends" class="block nav-link text-gray-600 font-medium">Tendências Streaming</a>
+        </div>
     </header>
 
     <main class="container mx-auto p-4 md:p-6 lg:p-8">
@@ -176,6 +190,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Menu hambúrguer mobile
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
 
             // Dados Históricos Consolidados (Julho, Agosto, Setembro)
             const historicalData = {
